@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../main.css">
+
+    <div class="image-container">
+    <img src="../image/Logo-22.png" class="float-left">
+    </div>
+    <div class="logo-container">
+      <img src="../image/Home Kong Logo-22.png" class="float-left">
+    </div>
+
+    <div class="dropdown">
+      <img src="../image/588a6507d06f6719692a2d15.png" width="7%" height="7%">
+        <div class="dropdown-content">
+          <a href="../index.html">Home</a>
+          <a href="../Make_Your_Film/makeyourfilm.html">Make Your Film</a>
+          <a href="../Share_Your_Identity/shareyouridentity.html">Share Your Identity</a>
+          <a href="../Print_Your_Merch/printyourtmerch.html">Print Your Merch</a>
+        </div>
+    </div>
+  </head>
+
+  <body>
+
+    <script src="../script/main.js"></script>
+
+        <div class="container">
+      <img src="../image/collage-13.png" alt="print" style="width:100%;">
+      <div class="content">
+        <img src="../image/print_your_merch-12.png" width="90%" height="90%">
+        <h2>What you wear can reflect your personality and identity. Printing your unique QR pattern on a merchandise will allow you to physically show your Hong Kong recognition.
+        <br>
+        <br>
+          You can choose from different styles and colors. There are three styles available - Phone Case, Plain T-shirt and T-shirt with Pocket. There is also a variety of colours you can choose from.</h2>
+      </div>
+    </div>
+
+
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">
+        <button class="accordion">Style</button>
+        <div class="panel">
+          <input type="checkbox" id="t-shirt" name="t-shirt">
+          <label for="t-shirt"><h3>T-shirt</h3></label><br>
+          <input type="checkbox" id="phone" name="phone">
+          <label for="phone"><h3>Phone Case</h3></label>
+        </div>
+      </a>
+      <a href="#">
+        <button class="accordion">Gender</button>
+        <div class="panel">
+          <input type="checkbox" id="female" name="female">
+          <label for="female"><h3>Female</h3></label><br>
+          <input type="checkbox" id="male" name="male">
+          <label for="male"><h3>Male</h3></label>
+        </div>
+      </a>
+      <a href="#">
+        <button class="accordion">Color</button>
+        <div class="panel">
+          <img src="../image/side-color.png" alt="color" style="width:30%;">
+        </div>
+      </a>
+      <a href="#">
+        <button class="accordion">Price</button>
+        <div class="panel">
+          <div class="range-input">
+            <input type="range" min='0' max = "100" value="0" step="10">
+            <div class="value">
+                 <div></div>
+             </div>
+            </div> 
+        </div>
+      </a>
+    </div>
+    
+    <div id="main">
+      <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Filter</span>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
+
+  <script>
+    let rangeInput = document.querySelector(".range-input input");
+let rangeValue = document.querySelector(".range-input .value div");
+
+let  start = parseFloat(rangeInput.min);
+let end = parseFloat(rangeInput.max);
+let step = parseFloat(rangeInput.step);
+
+for(let i=start;i<=end;i+=step){
+  rangeValue.innerHTML += '<div>'+i+'</div>';
+}
+rangeInput.addEventListener("input",function(){
+  let top = parseFloat(rangeInput.value)/step * -40;
+  rangeValue.style.marginTop = top+"px";
+});
+  </script>
+
+<div>
+
+  <div class="image">
+    <img class="image__img" src="../image/t-shirt mockup front.png" alt="Bricks">
+    <div class="image__overlay image__overlay--primary">
+        <div class="image__title"><a href="../Buy_Tshirt/buytshirt.html">Plain T-Shirt</a></div>
+    </div>
+</div>
+
+<div class="image">
+  <img class="image__img" src="../image/t-shirt mockup pocket.png" alt="Bricks">
+  <div class="image__overlay image__overlay--primary">
+      <div class="image__title"><a href="../Buy_Tshirt/buytshirt.html">T-Shirt with Chest Pocket</a></div>
+  </div>
+</div>
+
+<div class="image">
+  <img class="image__img" src="../image/phone case.png" alt="Bricks">
+  <div class="image__overlay image__overlay--primary">
+      <div class="image__title"><a href="../Buy_Phonecase/buyphonecase.html">Personalised Phone Case</a></div>
+  </div>
+</div>
+
+
+      <div>
+        <img src="../image/foot-25.png" width="100%" height="100%">
+      </div>
+  </body>
+</html>
